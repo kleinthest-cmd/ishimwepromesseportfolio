@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#060606" />
+    <script>
+      // Apply the saved theme (or the OS preference) before first paint to avoid a flash.
+      ;(() => {
+        try {
+          const saved = localStorage.getItem('portfolio-theme')
+          const theme =
+            saved === 'light' || saved === 'dark'
+              ? saved
+              : window.matchMedia('(prefers-color-scheme: light)').matches
+                ? 'light'
+                : 'dark'
+          document.documentElement.dataset.theme = theme
+          document.documentElement.style.colorScheme = theme
+        } catch {
+          /* storage unavailable — the default dark theme still applies */
+        }
+      })()
+    </script>
+    <title>ISHIMWE Promesse — Software Developer & Network Administrator</title>
+    <meta
+      name="description"
+      content="Portfolio of ISHIMWE Promesse, a software developer and network administrator with 2+ years of experience at Origin Group Ltd. Building fast, reliable web applications and secure networks."
+    />
+    <meta name="author" content="ISHIMWE Promesse" />
+    <meta
+      name="keywords"
+      content="ISHIMWE Promesse, software developer, network administrator, React developer, Rwanda, Origin Group Ltd, portfolio"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ISHIMWE Promesse — Software Developer & Network Administrator" />
+    <meta
+      property="og:description"
+      content="I design and build modern web applications, and keep business networks fast, secure and reliable."
+    />
+    <meta property="og:site_name" content="ISHIMWE Promesse" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "ISHIMWE Promesse",
+        "jobTitle": "Software Developer & Network Administrator",
+        "email": "mailto:kleinthest@gmail.com",
+        "telephone": "+250795480647",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kigali",
+          "addressCountry": "RW"
+        },
+        "worksFor": { "@type": "Organization", "name": "Origin Group Ltd" },
+        "sameAs": ["https://instagram.com/ishimwe.otw"]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
