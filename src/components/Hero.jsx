@@ -174,11 +174,30 @@ export default function Hero() {
                     <div className="relative grid size-36 place-items-center sm:size-40">
                       <div className="absolute inset-0 animate-spin-slow rounded-full border border-dashed border-accent/30" />
                       <div className="absolute inset-3 rounded-full bg-accent/10 blur-xl" />
-                      <div className="relative grid size-28 place-items-center rounded-full border border-line bg-gradient-to-br from-panel-2 to-bg sm:size-32">
-                        <span className="font-display text-4xl font-extrabold tracking-tight gold-text sm:text-5xl">
-                          IP
-                        </span>
-                        <span className="absolute -bottom-1 rounded-full border border-accent/30 bg-panel px-2.5 py-1 font-mono text-[9px] uppercase tracking-widest text-accent-ink">
+
+                      <div className="relative size-28 rounded-full sm:size-32">
+                        <div className="size-full overflow-hidden rounded-full border border-line bg-panel ring-1 ring-accent/25">
+                          <picture>
+                            <source
+                              type="image/webp"
+                              srcSet={profile.photo.webpSrcSet}
+                              sizes="(min-width: 640px) 8rem, 7rem"
+                            />
+                            <img
+                              src={profile.photo.src}
+                              srcSet={profile.photo.jpgSrcSet}
+                              sizes="(min-width: 640px) 8rem, 7rem"
+                              alt={profile.photo.alt}
+                              width={profile.photo.width}
+                              height={profile.photo.height}
+                              loading="eager"
+                              fetchPriority="high"
+                              decoding="async"
+                              className="size-full object-cover object-top"
+                            />
+                          </picture>
+                        </div>
+                        <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-accent/30 bg-panel px-2.5 py-1 font-mono text-[9px] uppercase tracking-widest text-accent-ink">
                           dev / net
                         </span>
                       </div>

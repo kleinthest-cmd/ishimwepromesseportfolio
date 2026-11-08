@@ -15,6 +15,16 @@ export const profile = {
   availability: 'Available for new opportunities',
   experience: '2+ years',
   company: 'Origin Group Ltd',
+  photo: {
+    alt: 'Portrait of ISHIMWE Promesse, software developer and network administrator',
+    width: 608,
+    height: 1736,
+    src: '/images/ishimwe-promesse-profile-608.jpg',
+    webpSrcSet:
+      '/images/ishimwe-promesse-profile-320.webp 320w, /images/ishimwe-promesse-profile-480.webp 480w, /images/ishimwe-promesse-profile-608.webp 608w',
+    jpgSrcSet:
+      '/images/ishimwe-promesse-profile-320.jpg 320w, /images/ishimwe-promesse-profile-480.jpg 480w, /images/ishimwe-promesse-profile-608.jpg 608w',
+  },
   intro:
     'I build clean, fast web applications — and keep the networks behind them secure, stable and ready for real work.',
   about: [

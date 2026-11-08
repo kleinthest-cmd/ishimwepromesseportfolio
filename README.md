@@ -13,7 +13,7 @@ just a fast, responsive front end.
 | Section    | What's inside                                                                 |
 | ---------- | ----------------------------------------------------------------------------- |
 | Home       | Availability badge, animated role typewriter, profile card, quick stats        |
-| About      | Story, highlights, quick facts and a branded profile card                      |
+| About      | Story, highlights, quick facts and a portrait card with the profile photo      |
 | Experience | Timeline: Origin Group Ltd, freelance work and continuous learning             |
 | Skills     | Frontend, backend, networking and tooling, plus animated proficiency bars      |
 | Services   | Web development, network administration, IT support, API & database work       |
@@ -117,19 +117,38 @@ pre-filled message addressed to `kleinthest@gmail.com`. Phone and email cards in
 Project entries are editable placeholders that reflect the kind of work Promesse does. Replace
 them with real case studies, screenshots or live URLs when available.
 
-### Adding a photo
+### Profile photo
 
-The site currently uses a branded "IP" monogram so it looks intentional without a photo. To add a
-portrait, place an image in `public/` (for example `public/profile.jpg`) and swap the monogram block
-in `src/components/Hero.jsx` / `src/components/About.jsx` for an `<img>` with `object-cover`.
+The portrait of Promesse is included in two places: the circular avatar in the hero and the larger
+card in the About section. The image is stored in `public/images/` in three widths and two formats
+so browsers download only what they need (WebP first, JPEG fallback):
+
+```
+public/images/
+  ishimwe-promesse-profile-320.webp / .jpg
+  ishimwe-promesse-profile-480.webp / .jpg
+  ishimwe-promesse-profile-608.webp / .jpg
+assets/
+  ishimwe-promesse-profile-source.jpg   Original, kept out of the deployed bundle
+```
+
+Image paths, alt text and intrinsic dimensions live in `src/data/portfolio.js` under `profile.photo`.
+To use a new photo, export it in the same three widths (or update the `srcset` strings), replace the
+files in `public/images/`, and update `width` / `height` in `portfolio.js`. The markup already uses
+`<picture>`, `srcset`, `sizes`, explicit dimensions, `decoding="async"` and lazy loading (except the
+hero avatar, which uses `fetchpriority="high"`). Always add meaningful alt text for informative
+images; the About portrait uses an empty `alt` because the name is displayed over it as text.
 
 ---
 
 ## Project structure
 
 ```
+assets/
+  ishimwe-promesse-profile-source.jpg   Original profile photo
 public/
   favicon.svg
+  images/         Responsive WebP + JPEG profile photo variants
 src/
   components/     Navbar, Hero, Marquee, About, Experience, Skills,
                   Services, Projects, Contact, Footer, Reveal, ThemeToggle, UI bits
