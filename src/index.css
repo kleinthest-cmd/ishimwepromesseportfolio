@@ -18,7 +18,7 @@
   --color-fg: #ffffff;
   --color-fg-muted: #a6a6ae;
   --color-fg-soft: #7c7c85;
-  --color-fg-faint: #71717b;
+  --color-fg-faint: #83838c;
 
   --color-accent: #ffd400;
   --color-accent-hover: #ffe042;
@@ -87,7 +87,7 @@ html[data-theme='light'] {
   --color-fg: #161616;
   --color-fg-muted: #4a4a52;
   --color-fg-soft: #63636b;
-  --color-fg-faint: #85858d;
+  --color-fg-faint: #6b6b74;
 
   --color-accent: #f5c400;
   --color-accent-hover: #e6b600;

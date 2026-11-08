@@ -113,7 +113,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col items-center justify-between gap-3 border-t border-line py-6 sm:flex-row">
-          <p className="text-[11px] text-fg-faint">
+          <p className="text-[11px] text-fg-soft">
             © {YEAR} {profile.fullName}. All rights reserved.
           </p>
           <p className="flex items-center gap-1.5 font-mono text-[10px] text-fg-faint">
